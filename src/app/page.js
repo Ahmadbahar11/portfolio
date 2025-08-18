@@ -1,95 +1,94 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import Link from "next/link";
+import { Typewriter } from "react-simple-typewriter";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <section className="hero-section position-relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="hero-deco hero-deco-1" />
+      <div className="hero-deco hero-deco-2" />
+      <div className="hero-grid" aria-hidden="true" />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      <div className="container position-relative">
+        <div className="row align-items-center g-4">
+          <div className="col-lg-7">
+            <div className="eyebrow">ENGINEERING DIGITAL EXPERIENCES</div>
+
+            <h3 className="display-hero">
+              I’m Ahmad Bahar
+              <br />
+            </h3>
+            <h4>
+              <span style={{ color: "#black", fontWeight: "bold" }}>
+                <Typewriter
+                  words={[
+                    "A Frontend Engineer",
+                    "A Problem Solver",
+                    "A React Enthusiast",
+                    "A UI/UX Craftsman",
+                  ]}
+                  loop={true}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={60}
+                  deleteSpeed={40}
+                  delaySpeed={1500}
+                />
+              </span>
+            </h4>
+            <br />
+
+            <p className="lead-hero mb-4">
+              I design and develop modern, responsive, and scalable interfaces
+              using React.js & Next.js. My toolkit includes Tailwind CSS,
+              Bootstrap 5, Material-UI (MUI), and Ant Design for clean UI.
+            </p>
+
+            <div className="d-flex flex-wrap gap-3">
+              <Link
+                href="/portfolio"
+                className="btn btn-accent btn-lg btn-pill px-4"
+              >
+                View Projects
+              </Link>
+              <Link
+                href="/contact"
+                className="btn btn-outline-secondary btn-lg btn-pill px-4 btn-ghost"
+              >
+                Hire Me
+              </Link>
+            </div>
+
+            {/* Tech chips */}
+            <ul className="hero-chips mt-4">
+              {[
+                "Next.js",
+                "React.js",
+                "Tailwind CSS",
+                "Bootstrap 5",
+                "Material UI (MUI)",
+                "Ant Design",
+                "Redux Toolkit",
+                "Axios / REST APIs",
+                "Git & GitHub",
+              ].map((t) => (
+                <li key={t} className="chip">
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="col-lg-5 text-center">
+            <img
+              src="/hero.png"
+              alt="Ahmad Bahar"
+              className="img-fluid rounded-4 hero-photo shadow-hero"
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </section>
   );
 }
