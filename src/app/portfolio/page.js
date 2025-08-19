@@ -38,6 +38,7 @@ export default function PortfolioPage() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
+              {/* Admin Panel */}
               <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-admin">
                 <img
                   src="assets/img/admin-panel.jpg"
@@ -64,10 +65,11 @@ export default function PortfolioPage() {
                   </Link>
                 </div>
               </div>
-              ;{/* Company Website */}
+
+              {/* Company Website */}
               <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-company">
                 <img
-                  src="assets/img/company-webistes.jpg"
+                  src="assets/img/company-websites.jpg"
                   className="img-fluid"
                   alt="Company Website"
                 />
@@ -91,7 +93,8 @@ export default function PortfolioPage() {
                   </Link>
                 </div>
               </div>
-              ;{/* Store 1 */}
+
+              {/* Store 1 */}
               <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-store">
                 <img
                   src="assets/img/store-1.jpg"
@@ -118,7 +121,8 @@ export default function PortfolioPage() {
                   </Link>
                 </div>
               </div>
-              ;{/* Store 2 */}
+
+              {/* Store 2 */}
               <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-store">
                 <img
                   src="assets/img/store-2.jpg"
@@ -145,7 +149,6 @@ export default function PortfolioPage() {
                   </Link>
                 </div>
               </div>
-              ;{/* Portfolio Items here... */}
             </div>
           </div>
         </div>

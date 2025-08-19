@@ -1,30 +1,40 @@
 "use client";
 
 import { useEffect } from "react";
-import Isotope from "isotope-layout";
 
 export default function PortfolioIsotope() {
   useEffect(() => {
-    // init Isotope
-    let iso = new Isotope(".isotope-container", {
-      itemSelector: ".isotope-item",
-      layoutMode: "masonry",
-    });
+    let iso;
 
-    // filter buttons
-    let filterButtons = document.querySelectorAll(".portfolio-filters li");
+    // Run only in browser
+    if (typeof window !== "undefined") {
+      import("isotope-layout").then((Isotope) => {
+        iso = new Isotope.default(".isotope-container", {
+          itemSelector: ".isotope-item",
+          layoutMode: "masonry",
+        });
 
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", function () {
-        filterButtons.forEach((el) => el.classList.remove("filter-active"));
-        this.classList.add("filter-active");
+        // filter buttons
+        const filterButtons = document.querySelectorAll(
+          ".portfolio-filters li"
+        );
 
-        let filterValue = this.getAttribute("data-filter");
-        iso.arrange({ filter: filterValue });
+        filterButtons.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            filterButtons.forEach((el) => el.classList.remove("filter-active"));
+            this.classList.add("filter-active");
+
+            const filterValue = this.getAttribute("data-filter");
+            iso.arrange({ filter: filterValue });
+          });
+        });
       });
-    });
+    }
 
-    return () => iso.destroy(); // cleanup
+    // Cleanup
+    return () => {
+      if (iso) iso.destroy();
+    };
   }, []);
 
   return null;
