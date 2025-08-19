@@ -1,5 +1,21 @@
 import Link from "next/link";
 import "./globals.css";
+import Script from "next/script";
+import { Roboto, Poppins, Raleway } from "next/font/google";
+import AOSInit from "./components/AOSInit"; // 👈 you'll add this
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+});
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata = {
   title: "Ahmad Bahar — Portfolio",
@@ -11,46 +27,39 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Favicons */}
-        <link rel="icon" href="  assets/img/favicon.png" />
-        <link rel="apple-touch-icon" href="  assets/img/apple-touch-icon.png" />
-
-        {/* Google Fonts (as in template) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="icon" href="/assets/img/favicon.png" />
+        <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
 
         {/* Vendor CSS */}
         <link
           rel="stylesheet"
-          href="assets/vendor/bootstrap/css/bootstrap.min.css"
+          href="/assets/vendor/bootstrap/css/bootstrap.min.css"
         />
         <link
           rel="stylesheet"
-          href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+          href="/assets/vendor/bootstrap-icons/bootstrap-icons.css"
         />
-        <link rel="stylesheet" href="assets/vendor/aos/aos.css" />
+        <link rel="stylesheet" href="/assets/vendor/aos/aos.css" />
         <link
           rel="stylesheet"
-          href="assets/vendor/swiper/swiper-bundle.min.css"
+          href="/assets/vendor/swiper/swiper-bundle.min.css"
         />
         <link
           rel="stylesheet"
-          href="assets/vendor/glightbox/css/glightbox.min.css"
+          href="/assets/vendor/glightbox/css/glightbox.min.css"
         />
 
         {/* Main CSS */}
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
       </head>
 
-      <body className="index-page">
-        {/* Header (converted to Next links) */}
+      <body
+        className={`index-page ${roboto.className} ${poppins.className} ${raleway.className}`}
+      >
+        {/* Init AOS only on client */}
+        <AOSInit />
+
+        {/* Header */}
         <header
           id="header"
           className="header d-flex align-items-center light-background sticky-top"
@@ -60,7 +69,6 @@ export default function RootLayout({ children }) {
               href="/"
               className="logo d-flex align-items-center me-auto me-xl-0"
             >
-              {/* <img src="  assets/img/logo.png" alt="" /> */}
               <h1 className="sitename">Portfolio</h1>
             </Link>
 
@@ -83,7 +91,6 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link href="/portfolio">Portfolio</Link>
                 </li>
-
                 <li>
                   <Link href="/contact">Contact</Link>
                 </li>
@@ -146,34 +153,41 @@ export default function RootLayout({ children }) {
           <i className="bi bi-arrow-up-short"></i>
         </a>
 
-        {/* Vendor JS (defer) */}
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js" defer></script>
-        <script src="assets/vendor/aos/aos.js" defer></script>
-        <script
-          src="assets/vendor/waypoints/noframework.waypoints.js"
-          defer
-        ></script>
-        <script
-          src="assets/vendor/purecounter/purecounter_vanilla.js"
-          defer
-        ></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-        <script
-          src="assets/vendor/glightbox/js/glightbox.min.js"
-          defer
-        ></script>
-        <script
-          src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
-          defer
-        ></script>
-        <script
-          src="assets/vendor/isotope-layout/isotope.pkgd.min.js"
-          defer
-        ></script>
-
-        {/* Main JS */}
-        <script src="assets/js/main.js" defer></script>
+        {/* Vendor JS (loaded via Next.js Script) */}
+        <Script
+          src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="/assets/vendor/php-email-form/validate.js"
+          strategy="lazyOnload"
+        />
+        <Script src="/assets/vendor/aos/aos.js" strategy="lazyOnload" />
+        <Script
+          src="/assets/vendor/waypoints/noframework.waypoints.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="/assets/vendor/purecounter/purecounter_vanilla.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="/assets/vendor/swiper/swiper-bundle.min.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="/assets/vendor/glightbox/js/glightbox.min.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"
+          strategy="lazyOnload"
+        />
+        <Script src="/assets/js/main.js" strategy="lazyOnload" />
       </body>
     </html>
   );
