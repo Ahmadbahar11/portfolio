@@ -1,5 +1,7 @@
+
 import Link from "next/link";
-import PortfolioIsotope from "../components/PortfolioIsotope"; // adjust path
+import PortfolioIsotope from "../components/PortfolioIsotope";
+import GLightboxInit from "../components/GLightboxInit";
 
 export default function PortfolioPage() {
   return (
@@ -157,8 +159,10 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Initialize Isotope */}
-      <PortfolioIsotope />
+  {/* Initialize Isotope */}
+  <PortfolioIsotope />
+  {/* Initialize GLightbox */}
+  <GLightboxInit />
     </main>
   );
 }
