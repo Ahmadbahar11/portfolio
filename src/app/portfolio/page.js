@@ -38,18 +38,33 @@ export default function PortfolioPage() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
+              <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-company">
+                <img src="assets/img/niazi-project.jpg" className="img-fluid" />
+                <div className="portfolio-info">
+                  <h4>Niazi Travel And Tour</h4>
+                  <a
+                    title="Niazi Travel And Tour"
+                    data-gallery="portfolio-gallery-store"
+                    className="glightbox preview-link"
+                  >
+                    <i className="bi bi-zoom-in"></i>
+                  </a>
+                  <Link
+                    href="https://niazitours.pk/"
+                    className="details-link"
+                    title="More Details"
+                  >
+                    <i className="bi bi-link-45deg"></i>
+                  </Link>
+                </div>
+              </div>
               {/* Admin Panel */}
               <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-admin">
-                <img
-                  src="assets/img/admin-panel.jpg"
-                  className="img-fluid"
-                  alt="Admin Panel"
-                />
+                <img src="assets/img/admin-panel.jpg" className="img-fluid" />
                 <div className="portfolio-info">
                   <h4>Admin Dashboard</h4>
                   <p>React + MUI based interactive dashboards</p>
                   <a
-                    href="assets/img/admin-panel.jpg"
                     title="Admin Dashboard"
                     data-gallery="portfolio-gallery-admin"
                     className="glightbox preview-link"
@@ -71,13 +86,11 @@ export default function PortfolioPage() {
                 <img
                   src="assets/img/company-websites.jpg"
                   className="img-fluid"
-                  alt="Company Website"
                 />
                 <div className="portfolio-info">
                   <h4>Company Website</h4>
                   <p>Modern responsive business site</p>
                   <a
-                    href="assets/img/profile-img.jpg"
                     title="Company Website"
                     data-gallery="portfolio-gallery-company"
                     className="glightbox preview-link"
@@ -96,16 +109,11 @@ export default function PortfolioPage() {
 
               {/* Store 1 */}
               <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-store">
-                <img
-                  src="assets/img/store-1.jpg"
-                  className="img-fluid"
-                  alt="E-Commerce Store 1"
-                />
+                <img src="assets/img/store-1.jpg" className="img-fluid" />
                 <div className="portfolio-info">
                   <h4>E-Commerce Store</h4>
                   <p>Full-featured store with cart & checkout</p>
                   <a
-                    href="assets/img/store-1.jpg"
                     title="E-Commerce Store"
                     data-gallery="portfolio-gallery-store"
                     className="glightbox preview-link"
@@ -124,16 +132,11 @@ export default function PortfolioPage() {
 
               {/* Store 2 */}
               <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-store">
-                <img
-                  src="assets/img/store-2.jpg"
-                  className="img-fluid"
-                  alt="E-Commerce Store 2"
-                />
+                <img src="assets/img/store-2.jpg" className="img-fluid" />
                 <div className="portfolio-info">
                   <h4>E-Commerce Store</h4>
                   <p>Next.js + Tailwind powered shop</p>
                   <a
-                    href="assets/img/store-2.jpg"
                     title="E-Commerce Store"
                     data-gallery="portfolio-gallery-store"
                     className="glightbox preview-link"
