@@ -23,7 +23,7 @@ export default function HomePage() {
               <span style={{ color: "#black", fontWeight: "bold" }}>
                 <Typewriter
                   words={[
-                    "A Frontend Engineer",
+                    "A Mern Stack Engineer",
                     "A Problem Solver",
                     "A React Enthusiast",
                     "A UI/UX Craftsman",
@@ -41,8 +41,7 @@ export default function HomePage() {
 
             <p className="lead-hero mb-4">
               I design and develop modern, responsive, and scalable interfaces
-              using React.js & Next.js. My toolkit includes Tailwind CSS,
-              Bootstrap 5, Material-UI (MUI), and Ant Design for clean UI.
+              using React.js ,Next.js ,Node.js and Express.js.
             </p>
 
             <div className="d-flex flex-wrap gap-3">
